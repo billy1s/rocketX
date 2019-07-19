@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+
+
+    <form action="" method="post">
+        {% csrf_token %}}
+        {{ form }}
+    <input type="submit" value="Submit">
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+    function sendlaunch(userid,launchid) {
+        var csrftoken = "{{ csrf_token }}";
+        var MY_URL = "{% url 'main_app:save_launch' %} ";
+        var xhr = new XMLHttpRequest();
+        var data = new FormData();
+        data.append('userid', 2);
+        data.append('launchid',2);
+        xhr.open('POST', MY_URL);
+        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        xhr.send(data);
+    }
+
+
+
+    {##}
+    {#var xhr = new XMLHttpRequest();#}
+    {#var url = "{% url 'main_app:saved_rockets' %}";#}
+    {#xhr.open("POST", url, true);#}
+    {#xhr.setRequestHeader("Content-Type", "application/json");#}
+    {#xhr.setRequestHeader('x-csrf-token',csrf);#}
+    {##}
+    {##}
+    {#var data = JSON.stringify({"userid": 2, "rocketid": 2});#}
+    {#xhr.send(data);#}
+
+    </script>
+{% endblock %}

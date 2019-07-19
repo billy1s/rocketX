@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block body_block %}
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+        {{ user.id }}
+
+
+
+
+    {% endif %}
+
+
+
+
+{% endblock %}
